@@ -1,7 +1,6 @@
 package seedu.address.testutil;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -85,7 +84,9 @@ public class EditPersonDescriptorBuilder {
      * Sets the {@code MemberStatus} of the {@code EditPersonDescriptor} that we are building.
      */
     public EditPersonDescriptorBuilder withMemberStatus(String memberStatus) {
-        LocalDate date = LocalDate.parse(memberStatus, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate date = memberStatus.equalsIgnoreCase("valid")
+                ? LocalDate.now().plusYears(1)
+                : LocalDate.now().minusDays(1);
         descriptor.setMemberStatus(new MemberStatus(date));
         return this;
     }
