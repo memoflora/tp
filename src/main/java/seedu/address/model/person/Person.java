@@ -35,8 +35,8 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(MemberId id, Name name, Phone phone, Email email,Gender gender, DateOfBirth dateOfBirth, 
-                  MemberStatus memberStatus, Address address,
+    public Person(MemberId id, Name name, Phone phone, Gender gender, DateOfBirth dateOfBirth,
+                  MemberStatus memberStatus, Email email, Address address,
                   MembershipType type, MembershipJoinDate joinDate, Set<Tag> tags) {
         requireAllNonNull(id, name, phone, email, address, type, joinDate, tags);
         this.id = id;

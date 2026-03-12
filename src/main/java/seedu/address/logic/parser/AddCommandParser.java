@@ -48,8 +48,9 @@ public class AddCommandParser implements Parser<AddCommand> {
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE, PREFIX_EMAIL,
                 PREFIX_GENDER, PREFIX_DATEOFBIRTH, PREFIX_MEMBERSTATUS, PREFIX_MEMBERSHIP_TYPE)
                 || !argMultimap.getPreamble().isEmpty()) {
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
-                        PREFIX_MEMBERSHIP_TYPE, PREFIX_TAG);
+            ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,
+                    PREFIX_MEMBERSHIP_TYPE, PREFIX_TAG);
+        }
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_ADDRESS, PREFIX_PHONE,
                 PREFIX_EMAIL, PREFIX_MEMBERSHIP_TYPE) || !argMultimap.getPreamble().isEmpty()) {
