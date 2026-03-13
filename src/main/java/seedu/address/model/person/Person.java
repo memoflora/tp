@@ -136,20 +136,15 @@ public class Person {
                 && email.equals(otherPerson.email)
                 && gender.equals(otherPerson.gender)
                 && dateOfBirth.equals(otherPerson.dateOfBirth)
-                && memberStatus.equals(otherPerson.memberStatus)
                 && address.equals(otherPerson.address)
                 && membershipType.equals(otherPerson.membershipType)
-                && joinDate.equals(otherPerson.joinDate)
-                && expiryDate.equals(otherPerson.expiryDate)
-                && tags.equals(otherPerson.tags)
-                && id.equals(otherPerson.id);
+                && tags.equals(otherPerson.tags);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(id, name, phone, email, gender, dateOfBirth,
-                memberStatus, address, membershipType, joinDate, expiryDate, tags);
+        return Objects.hash(name, phone, email, gender, dateOfBirth, address, membershipType, tags);
     }
 
     @Override
